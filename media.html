@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szwagierowe Rozrywki - Szwagiery.pl</title>
+    <style>
+        :root {
+            --bg-dark: #120c08;
+            --card-bg: #1c140e;
+            --gold-primary: #d4a359;
+            --gold-light: #f5d796;
+            --gold-accent: #8c622b;
+            --text-main: #e8d8c8;
+            --text-muted: #a08c78;
+            --border-color: #3d2a1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin: 10px 0 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        .back-link {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto 30px;
+        }
+
+        .section-title {
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            width: 90%;
+            max-width: 900px;
+            border-left: 4px solid var(--gold-primary);
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 900px;
+            padding-bottom: 20px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .card h3 {
+            color: var(--gold-primary);
+            margin-top: 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .media-box {
+            width: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #000;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-box img, .media-box video {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-note {
+            margin-top: auto;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+
+        .footer-note a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">&larr; Wróć do Centrum Dowodzenia</a>
+        <h1>Szwagierowe Rozrywki</h1>
+        <p class="subtitle">Galeria z folderów tematycznych</p>
+        <div class="divider"></div>
+    </header>
+
+    <!-- Sekcja: Rzym -->
+    <div class="section-title">Rzym</div>
+    <div class="grid">
+        <div class="card">
+            <h3>Koloseum</h3>
+            <div class="media-box">
+                <img src="media/rzym/koloseum.webp" alt="Koloseum">
+            </div>
+        </div>
+        <div class="card">
+            <h3>Film z wyprawy</h3>
+            <div class="media-box">
+                <video controls>
+                    <source src="media/rzym/film_rzym.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje elementu wideo.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        Napędzane przez <a href="#">Szwagiery.pl</a> &copy; 2026
+    </div>
+
+</body>
+</html>
