@@ -4,206 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szwagiery.pl - Centrum Dowodzenia</title>
-    <style>
-        :root {
-            --bg-dark: #120c08;
-            --card-bg: #1c140e;
-            --gold-primary: #d4a359;
-            --gold-light: #f5d796;
-            --gold-accent: #8c622b;
-            --text-main: #e8d8c8;
-            --text-muted: #a08c78;
-            --border-color: #3d2a1b;
-            --input-bg: #120c08;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .logo-container {
-            margin-bottom: 15px;
-        }
-
-        .logo-container img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 3px solid var(--gold-primary);
-            box-shadow: 0 0 25px rgba(212, 163, 89, 0.25);
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--gold-light);
-            letter-spacing: 3px;
-            margin: 10px 0 5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            text-transform: uppercase;
-        }
-
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 0;
-        }
-
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto 30px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            width: 95%;
-            max-width: 1250px;
-            padding-bottom: 50px;
-            align-items: stretch;
-        }
-
-        @media (max-width: 1100px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
-            height: 100%;
-            box-sizing: border-box;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--gold-primary);
-        }
-
-        .card h3 {
-            color: var(--gold-primary);
-            margin-top: 0;
-            font-size: 1.2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-
-        .card p {
-            color: var(--text-main);
-            font-size: 0.9rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            background-color: var(--input-bg);
-            color: var(--text-main);
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        input[type="text"]:focus {
-            border-color: var(--gold-primary);
-        }
-
-        .btn {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
-            color: #0d0805;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.2s, transform 0.1s;
-            text-align: center;
-            text-decoration: none;
-            margin-top: 10px;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        #responseMsg {
-            margin-top: 8px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            min-height: 15px;
-        }
-
-        .footer-note {
-            margin-top: auto;
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            width: 100%;
-        }
-
-        .footer-note a {
-            color: var(--gold-primary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <meta name="description" content="Oficjalny portal i darmowe usługi dla społeczności Szwagiery.pl - generator subdomen, skracacz linków i galeria.">
+    <meta property="og:title" content="Szwagiery.pl - Centrum Dowodzenia">
+    <meta property="og:description" content="Oficjalny portal i darmowe usługi dla społeczności Szwagiery.pl.">
+    <meta property="og:image" content="logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <meta name="theme-color" content="#120c08">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <!-- Logo w kółku (logo.jpg) -->
             <img src="logo.jpg" alt="Szwagiery.pl Logo">
         </div>
         <h1>SZWAGIERY.PL</h1>
@@ -217,13 +30,21 @@
             <div>
                 <h3>🌐 Wygeneruj Subdomenę</h3>
                 <p>Wpisz swoją nazwę oraz IP serwera, aby natychmiast utworzyć subdomenę w <strong>szwagiery.pl</strong>:</p>
-                
-                <form id="subdomainForm" class="form-group">
-                    <input type="text" id="subdomain" placeholder="Nazwa (np. stasiu)" required>
-                    <input type="text" id="ip" placeholder="Adres IP (np. 1.2.3.4)" required>
-                    <button type="submit" class="btn">Stwórz subdomenę</button>
+
+                <form id="subdomainForm" class="form-group" novalidate>
+                    <label class="field-label" for="subdomain">Nazwa subdomeny</label>
+                    <input type="text" id="subdomain" name="subdomain" placeholder="np. stasiu" required
+                           pattern="[a-zA-Z0-9-]{1,63}" autocomplete="off">
+                    <div class="field-error" id="subdomainError"></div>
+
+                    <label class="field-label" for="ip">Adres IP serwera</label>
+                    <input type="text" id="ip" name="ip" placeholder="np. 1.2.3.4" required
+                           inputmode="decimal" autocomplete="off">
+                    <div class="field-error" id="ipError"></div>
+
+                    <button type="submit" class="btn" id="subdomainSubmit">Stwórz subdomenę</button>
                 </form>
-                <div id="responseMsg"></div>
+                <div id="responseMsg" role="status" aria-live="polite"></div>
             </div>
         </div>
 
@@ -233,7 +54,7 @@
                 <h3>🔗 Skracacz Linków</h3>
                 <p>Skracaj długie adresy WWW i generuj proste odnośniki w domenie Szwagiery.pl dla swojej społeczności.</p>
             </div>
-            <a href="#" class="btn" onclick="alert('Skracacz linków zostanie podpięty w kolejnym kroku!')">Skróć link</a>
+            <button type="button" class="btn btn-soon" disabled title="Funkcja w przygotowaniu">Wkrótce dostępne</button>
         </div>
 
         <!-- LemurHost -->
@@ -242,7 +63,7 @@
                 <h3>⚡ Partnerstwo & Hosting</h3>
                 <p>Szukasz niezawodnej infrastruktury pod serwery gier lub własne projekty? Sprawdź pełną ofertę.</p>
             </div>
-            <a href="https://lemurhost.pl" target="_blank" class="btn">Odwiedź LemurHost.pl</a>
+            <a href="https://lemurhost.pl" target="_blank" rel="noopener noreferrer" class="btn">Odwiedź LemurHost.pl</a>
         </div>
 
         <!-- Szwagierowe Rozrywki -->
@@ -256,41 +77,85 @@
     </div>
 
     <div class="footer-note">
-        Napędzane przez <a href="#">Szwagiery.pl</a> & <a href="https://lemurhost.pl">LemurHost.pl</a> &copy; 2026
+        Napędzane przez <a href="#">Szwagiery.pl</a> & <a href="https://lemurhost.pl" target="_blank" rel="noopener noreferrer">LemurHost.pl</a> &copy; 2026
     </div>
 
     <script>
-    document.getElementById('subdomainForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const msg = document.getElementById('responseMsg');
-        const subdomain = document.getElementById('subdomain').value.trim();
-        const ip = document.getElementById('ip').value.trim();
+    // TODO: podmień na prawdziwy adres Twojego API do tworzenia subdomen (Cloudflare worker / backend).
+    const SUBDOMAIN_API_URL = 'https://TWOJE-API.przyklad.pl/api/create-subdomain';
 
-        msg.innerText = "Łączenie z Cloudflare...";
-        msg.style.color = "var(--gold-primary)";
+    const SUBDOMAIN_PATTERN = /^[a-zA-Z0-9-]{1,63}$/;
+    // Prosta walidacja formatu IPv4 (nie sprawdza czy adres jest routowalny).
+    const IP_PATTERN = /^(\d{1,3}\.){3}\d{1,3}$/;
+
+    function isValidIPv4(value) {
+        if (!IP_PATTERN.test(value)) return false;
+        return value.split('.').every(part => Number(part) >= 0 && Number(part) <= 255);
+    }
+
+    const form = document.getElementById('subdomainForm');
+    const submitBtn = document.getElementById('subdomainSubmit');
+    const msg = document.getElementById('responseMsg');
+    const subdomainInput = document.getElementById('subdomain');
+    const ipInput = document.getElementById('ip');
+    const subdomainError = document.getElementById('subdomainError');
+    const ipError = document.getElementById('ipError');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const subdomain = subdomainInput.value.trim();
+        const ip = ipInput.value.trim();
+
+        let valid = true;
+        subdomainError.textContent = '';
+        ipError.textContent = '';
+        subdomainInput.classList.remove('invalid');
+        ipInput.classList.remove('invalid');
+
+        if (!SUBDOMAIN_PATTERN.test(subdomain)) {
+            subdomainError.textContent = 'Dozwolone: litery, cyfry, myślnik (bez spacji).';
+            subdomainInput.classList.add('invalid');
+            valid = false;
+        }
+        if (!isValidIPv4(ip)) {
+            ipError.textContent = 'Podaj poprawny adres IPv4, np. 1.2.3.4.';
+            ipInput.classList.add('invalid');
+            valid = false;
+        }
+        if (!valid) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Tworzenie...';
+        msg.textContent = 'Łączenie z Cloudflare...';
+        msg.style.color = 'var(--gold-primary)';
 
         const formData = new FormData();
         formData.append('subdomain', subdomain);
         formData.append('ip', ip);
 
         try {
-            const res = await fetch('HTTPS://TWOJE-DARMOWE-API.koyeb.app/api/create-subdomain', {
+            const res = await fetch(SUBDOMAIN_API_URL, {
                 method: 'POST',
                 body: formData
             });
-            
+
             const data = await res.json();
-            
+
             if (res.ok) {
-                msg.innerText = data.message;
-                msg.style.color = "#4CAF50";
+                msg.textContent = data.message || 'Subdomena utworzona.';
+                msg.style.color = 'var(--success)';
+                form.reset();
             } else {
-                msg.innerText = data.detail || "Wystąpił błąd podczas tworzenia.";
-                msg.style.color = "#f44336";
+                msg.textContent = data.detail || 'Wystąpił błąd podczas tworzenia.';
+                msg.style.color = 'var(--error)';
             }
         } catch (err) {
-            msg.innerText = "Testowy zapis: Podepnij adres API w kodzie strony.";
-            msg.style.color = "var(--gold-light)";
+            msg.textContent = 'Nie udało się połączyć z API. Sprawdź adres SUBDOMAIN_API_URL w kodzie strony.';
+            msg.style.color = 'var(--gold-light)';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Stwórz subdomenę';
         }
     });
     </script>
