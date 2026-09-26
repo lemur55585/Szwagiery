@@ -20,6 +20,17 @@
 
     <main id="galleries"></main>
 
+    <div class="section-title">Filmy</div>
+    <div class="grid media-grid" style="padding-bottom: 50px;">
+        <div class="card">
+            <div>
+                <h3>🎥 Materiały wideo</h3>
+                <p>Filmy z wypraw trzymane są osobno (na zewnętrznym dysku), żeby nie obciążać repozytorium.</p>
+            </div>
+            <a href="filmy.html" class="btn">Otwórz Filmy</a>
+        </div>
+    </div>
+
     <div class="footer-note">
         Napędzane przez <a href="#">Szwagiery.pl</a> &copy; 2026
     </div>
@@ -27,12 +38,12 @@
     <script>
     // Dodaj kolejne sekcje tutaj - strona wygeneruje je automatycznie.
     // type: "image" lub "video"
+    // Filmy (duże pliki) siedzą osobno w filmy.html i linkują na zewnętrzne hostingi (np. OneDrive).
     const GALLERIES = [
         {
             section: 'Rzym',
             items: [
-                { title: 'Koloseum', type: 'image', src: 'media/rzym/koloseum.webp' },
-                { title: 'Film z wyprawy', type: 'video', src: 'media/rzym/film_rzym.mp4' }
+                { title: 'Koloseum', type: 'image', src: 'media/rzym/koloseum.webp' }
             ]
         }
     ];
