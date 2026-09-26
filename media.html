@@ -21,15 +21,7 @@
     <main id="galleries"></main>
 
     <div class="section-title">Filmy</div>
-    <div class="grid media-grid" style="padding-bottom: 50px;">
-        <div class="card">
-            <div>
-                <h3>🎥 Materiały wideo</h3>
-                <p>Filmy z wypraw trzymane są osobno (na zewnętrznym dysku), żeby nie obciążać repozytorium.</p>
-            </div>
-            <a href="filmy.html" class="btn">Otwórz Filmy</a>
-        </div>
-    </div>
+    <div class="grid media-grid" id="videoFolders" style="padding-bottom: 50px;"></div>
 
     <div class="footer-note">
         Napędzane przez <a href="#">Szwagiery.pl</a> &copy; 2026
@@ -85,6 +77,30 @@
 
     if (GALLERIES.length === 0) {
         container.innerHTML = '<p style="color:var(--text-muted);">Brak materiałów do wyświetlenia.</p>';
+    }
+
+    // Filmy jako przyciski-linki do folderów na zewnętrznym dysku (np. OneDrive).
+    // Dodaj kolejny wpis, żeby pojawił się nowy przycisk.
+    const VIDEO_FOLDERS = [
+        { title: 'Rzym', url: 'https://1drv.ms/f/c/d00a6770a66c6a51/IgBUSsFwsmMeQI2Xi3bd2LRjAYbO0YHw0WGIgdz8oN3pHPM' }
+    ];
+
+    const videoContainer = document.getElementById('videoFolders');
+    VIDEO_FOLDERS.forEach(folder => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div>
+                <h3>🎥 ${folder.title}</h3>
+                <p>Otwórz folder z filmami z wyprawy do sekcji "${folder.title}".</p>
+            </div>
+            <a href="${folder.url}" target="_blank" rel="noopener noreferrer" class="btn">Otwórz folder</a>
+        `;
+        videoContainer.appendChild(card);
+    });
+
+    if (VIDEO_FOLDERS.length === 0) {
+        videoContainer.innerHTML = '<p style="color:var(--text-muted);">Brak filmów do wyświetlenia.</p>';
     }
     </script>
 
