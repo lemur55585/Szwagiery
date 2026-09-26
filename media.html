@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,22 @@
 <body>
 
     <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Szwagiery.pl Logo">
+            </a>
+        </div>
         <a href="index.html" class="back-link">&larr; Wróć do Centrum Dowodzenia</a>
         <h1>Szwagierowe Rozrywki</h1>
-        <p class="subtitle">Galeria z folderów tematycznych</p>
+        <p class="subtitle">Zdjęcia i filmy z folderu media oraz wyjazdów</p>
         <div class="divider"></div>
     </header>
 
-    <main id="galleries"></main>
+    <!-- Sekcja: Zdjęcia z galerii -->
+    <main id="galleries" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></main>
 
-    <div class="section-title">Filmy</div>
+    <!-- Sekcja: Wyjazdy (Linki do folderów wideo) -->
+    <div class="section-title">Wyjazdy</div>
     <div class="grid media-grid" id="videoFolders" style="padding-bottom: 50px;"></div>
 
     <div class="footer-note">
@@ -28,9 +35,7 @@
     </div>
 
     <script>
-    // Dodaj kolejne sekcje tutaj - strona wygeneruje je automatycznie.
-    // type: "image" lub "video"
-    // Filmy (duże pliki) siedzą osobno w filmy.html i linkują na zewnętrzne hostingi (np. OneDrive).
+    // Konfiguracja galerii zdjęć (dodawaj kolejne foldery i zdjęcia według uznania)
     const GALLERIES = [
         {
             section: 'Rzym',
@@ -43,14 +48,8 @@
     const container = document.getElementById('galleries');
 
     function renderMediaBox(item) {
-        if (item.type === 'video') {
-            return `<video controls preload="metadata">
-                <source src="${item.src}" type="video/mp4">
-                Twoja przeglądarka nie obsługuje elementu wideo.
-            </video>`;
-        }
         return `<img src="${item.src}" alt="${item.title}" loading="lazy"
-                 onerror="this.closest('.media-box').innerHTML='<span style=\\'color:var(--text-muted);font-size:0.85rem;padding:10px;\\'>Plik niedostępny</span>'">`;
+                 onerror="this.closest('.card').querySelector('.media-box').innerHTML='<span style=\\'color:var(--text-muted);font-size:0.85rem;padding:10px;\\'>Plik niedostępny</span>'">`;
     }
 
     GALLERIES.forEach(gallery => {
@@ -66,8 +65,12 @@
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <h3>${item.title}</h3>
-                <div class="media-box">${renderMediaBox(item)}</div>
+                <div>
+                    <h3>${item.title}</h3>
+                </div>
+                <div class="media-box">
+                    ${renderMediaBox(item)}
+                </div>
             `;
             grid.appendChild(card);
         });
@@ -76,11 +79,10 @@
     });
 
     if (GALLERIES.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted);">Brak materiałów do wyświetlenia.</p>';
+        container.innerHTML = '<p style="color:var(--text-muted); text-align:center; margin: 20px;">Brak materiałów do wyświetlenia.</p>';
     }
 
-    // Filmy jako przyciski-linki do folderów na zewnętrznym dysku (np. OneDrive).
-    // Dodaj kolejny wpis, żeby pojawił się nowy przycisk.
+    // Sekcja Wyjazdy - przyciski do zewnętrznych folderów z filmami
     const VIDEO_FOLDERS = [
         { title: 'Rzym', url: 'https://1drv.ms/f/c/d00a6770a66c6a51/IgBUSsFwsmMeQI2Xi3bd2LRjAYbO0YHw0WGIgdz8oN3pHPM' }
     ];
@@ -91,7 +93,7 @@
         card.className = 'card';
         card.innerHTML = `
             <div>
-                <h3>🎥 ${folder.title}</h3>
+                <h3>🎬 ${folder.title}</h3>
                 <p>Otwórz folder z filmami z wyprawy do sekcji "${folder.title}".</p>
             </div>
             <a href="${folder.url}" target="_blank" rel="noopener noreferrer" class="btn">Otwórz folder</a>
